@@ -1,0 +1,9 @@
+//Como a aplicação é a responsável pela conexão com o banco, é necessário exportar o novo caminho feito...
+//Pelo qual o arquivo do sequelize irá interpretar. Juntamento com o caminho de migrations.
+
+const path = require('path');
+
+module.exports = {
+    config: path.resolve(__dirname, 'src', 'config', 'database.js'),
+    'migrations-path': path.resolve(__dirname, 'src', 'database', 'migrations'),
+};
