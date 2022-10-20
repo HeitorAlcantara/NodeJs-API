@@ -8,5 +8,6 @@ module.exports = {
     host: 'localhost',
     define: {
         timestamps: true,
-    }
+        underscored: true,
+    },
 };
