@@ -19,13 +19,15 @@ module.exports = {
 
     async read(req, res) {
         const { user_id } = req.params;
-        const user = await User.findByPk(user_id);
+        const user = await User.findByPk(user_id, { //Eager loading
+            include: { association: 'addresses' }
+        });
+
         if(user){
-            var address = await Address.findAll({ where: { user_id } });
-            return await res.json(address);
+            return await res.json(user);
         }
 
-        address = await Address.findAll();
+        const address = await Address.findAll();
         return await res.json(address);
-    }
+    },
 }

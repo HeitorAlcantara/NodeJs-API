@@ -12,7 +12,7 @@ class Address extends Model {
     }
 
     static associate(models){ //Passa todas as models como parâmetro
-        this.belongsTo(models.User  , {foreignKey: 'user_id' /*, as: 'user'*/}); 
+        this.belongsTo(models.User  , {foreignKey: 'user_id' , as: 'user'}); 
     }
 }
 
